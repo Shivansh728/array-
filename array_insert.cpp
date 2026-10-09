@@ -1,0 +1,34 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {10, 20, 30, 40, 50};
+    int n = 5, pos, element;
+
+    cout << "Enter element to insert: ";
+    cin >> element;
+
+    cout << "Enter position (1-6): ";
+    cin >> pos;
+
+    if (pos < 1 || pos > n + 1) {
+        cout << "Invalid position";
+        return 0;
+    }
+
+    for (int i = n; i >= pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[pos - 1] = element;
+    n++;
+
+    cout << "Array after insertion: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
